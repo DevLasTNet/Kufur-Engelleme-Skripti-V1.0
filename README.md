@@ -19,8 +19,8 @@
 ## 📥 Kurulum
 
 1. Skripti sunucunuzun `plugins/Skript/scripts` klasörüne koyun.  
-2. Sunucunuzu yeniden başlatın veya `/skript reload denem` komutunu kullanın.  
-3. İzinleri oyunculara verin (örneğin `kufur.bypass`, `kufur.gor`, `mute.manage`).
+2. Sunucunuzu yeniden başlatın veya `/skript reload küfür-engel-sistemi.sk` komutunu kullanın.  
+3. Ve Artık Sunucunuzda Harika Çalışan bir Küfür Engelleme Sistemi var. 🎉
 
 ---
 
@@ -33,4 +33,4 @@ Herhangi bir sorun veya öneri için:
 ---
 
 **Teşekkürler ve iyi oyunlar!** 🎉
-0
+
