@@ -1,0 +1,1 @@
+# Kufur-Engelleme-Skripti-V1.0
