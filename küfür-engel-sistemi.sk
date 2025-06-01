@@ -1,0 +1,82 @@
+# KÜFÜR ENGEL SİSTEMİ V1.0 DevLasTNet by 
+
+# SKRİPT ESKİ SÜRÜMLERDE ÇOK İYİ ÇALIŞMAYABİLİR BU YÜZDEN GÜNCEL SÜRÜMLERDE KULLANMANIZ ÖNERİLİR
+
+options:
+    prefix: &6&lKüfür Engel Sistemi &7»  
+    mute-suresi: 1 minutes   # Başlangıç mute süresi, istediğin gibi değiştir
+    mute-multiplier: 2       # Mute süresi katlama çarpanı (Örnek Olarak ilk başta 1dk mute atıldı bu sistem sayesinde oyuncu 2 defa mute ilk başta yediğinin x2 süresi mute yiyecek)
+    view-permission: kufur.gor # Oyuncunun Küfür Ettiği mesajı görmek yetkisi
+    mute-command-permission: mute.manage # Otomuteac yetkisi
+    bypass-permission: kufur.bypass # Bu yetki sayesinde küfür eden kişiyi baypass olur ve mute atılmaz
+
+on load:
+    broadcast "&a[Küfür Engelleme] &7Skript başarıyla yüklendi."
+
+on chat:
+    set {_message} to lower case message
+   
+   #  Küfür kısmını istediğiniz kadar uzatabilirsiniz
+    set {_censoredWords::*} to "amk", "a.m.k", "a.m.q", "amq", "a.q", "aq", "a.q.", "amn", "amına", "amını", "aminakoyayım", "aminakoyim", "aminakodum", "aminakoyim", "amcık", "amcuk", "amcik", "siktir", "sik", "sikerim", "sikik", "sikeyim", "siktiğim", "siktimin", "sikicem", "sikem", "siker", "s1k", "s!k", "s|k", "s.k", "s*k", "skrm", "skrmk", "skcem", "s*ktir", "s!ktir", "sktr", "skrr", "sktrr", "yarrak", "yarak", "yarrağım", "yarrağın", "yrak", "yrq", "y*rak", "y*rr*k", "yarq", "yraak", "göt", "got", "g.t", "g*t", "g0t", "götlek", "götveren", "götçü", "götüm", "götünü", "götüne", "götünden", "pezevenk", "pezo", "pezeveng", "pez", "p*zevenk", "p3z3v3nk", "oç", "o.c", "o*c", "or0spu", "orosbu", "or0spu", "orosp", "oro", "rosbu", "ros", "orospu çocuğu", "orospu evladı", "orospu", "0ç", "0rospu", "ibne", "ibn", "ib!ne", "ibn3", "ibin", "ibin3", "ibin*", "ib*", "yavşak", "yavş", "yavsa", "yawsak", "yaws", "kahpe", "kahbe", "kaltak", "dingil", "dangalak", "dalya", "şerefsiz", "şrefsiz", "şrfsz", "şrfs", "şr3fs1z", "ş3r3fs1z", "haysiyetsiz", "puşt", "pusht", "psht", "salak", "gerizekalı", "geri zekalı", "gerzek", "aptal", "mal", "mxl", "aptl", "gerzk", "çük", "çükü", "çüş", "domal", "kancık", "it", "it oğlu it", "hayvan", "çomar", "zübük", "züğürt", "kro", "hıyar", "soytarı", "arıza", "bok", "boktan", "boklu", "bokr", "boq", "seks", "sex", "s3ks", "mastürbasyon", "mast", "mastb", "mastürb", "mastbsyon", "porn", "porno", "p0rn", "çakma", "sapık", "şarlatan", "pislik", "godoş", "taşşak", "taşak", "taşş", "tşak", "kıç", "kıçını", "donunu", "sürtük", "şırfıntı", "s.ç.t.m", "sıçtım", "s.çmak", "dalyarak", "piç", "piç kurusu", "lavuk", "çapsız", "zibidi", "şaklaban", "kıro", "zenci", "dinsiz", "gavur", "kafir", "döl", "dölünü", "döl yatağı", "züğürt", "dangalak", "yarrak gibi", "yarak gibi", "yavşak", "çüş", "yılancı", "yızık", "kaka", "kakalı", "kakalık", "kakos", "yaltak", "yavşak", "sıç", "sıçmak", "gibisisin", "yakaladım", "malmıyım", "götüne", "götüne sokarim", "görük", "odun", "oduncu", "zıkkım", "kıçı", "zıkkımın", "zehir zıkkım", "delik", "delik deşik", "döverim", "ağızına", "ağzına", "g.tüne", "kıçına", "y*rr", "g*tne", "götne", "ötne", "ötünü", "otüne", "meme", "memeler", "göğüs", "göğüsleri", "zıkkım", "zıkkımın", "zehir zıkkım", "anır", "anırmak", "eşek gibi", "yarak gibi", "göt gibi", "ağzına sıç", "sıçacak", "sikerim", "yavşak", "pezevenk", "tezek", "piç kurusu", "avrat", "çomar", "s.çmak", "s.k.", "g.ç", "s.k.y", "yıllarca", "biir", "kusu", "sıgar", "sıkı", "oraya", "aşkına", "***", "xxx", "f*ck", "fuck", "sex", "bitch", "motherfucker", "pussy", "cock", "bastard", "bastards", "son of a bitch", "whore", "cum", "cocksucker", "cuck", "dyke", "whore", "horny", "shithead", "wank", "twat", "fuckhead", "butthead", "shitface", "skank", "ho", "hooker", "douchebag", "jackass", "freak", "tart", "slut", "slag", "cumslut", "cumming", "anal", "cockgobbler", "shag", "dildo", "mangina", "clit", "masturbate", "fap", "vulva", "slutty", "sexist", "horny", "faggot", "dyke", "lesbo", "cunt", "cumshot", "twat", "bastardize", "rape", "rapist", "molest", "incest", "pissed", "gay", "biatch", "bimbo", "badass", "cumdumpster", "cumwhore", "asshole", "bastardo", "pissed off", "fucktard", "fuckwit", "cockface", "clitface", "twatfaced", "shithead", "shithole", "shitbag", "pissflaps", "shitbox", "cockblock", "dickwad", "dickhead", "cockpocket", "buttsex", "ballbag", "buttplug", "buttfucker", "twatfaced", "asslicker", "flapslutter", "gash", "twatcrack", "buttslut", "shitty", "shithead", "clitlicker", "cumdumper", "cocksmoker", "mangina", "clitsucker", "cocksniffer", "dickcheese", "poopface", "poopy", "douche", "bitchass", "lameass", "fuckery", "douchbag"
+
+    if {mute::%player%} is set:
+        send "{@prefix} &cSusturuldunuz! Sebep: &e%{muteReason::%player%}% &7Süre: &e%{muteTime::%player%}%" to player
+        cancel event
+        stop
+
+    if player has permission "{@bypass-permission}":
+        stop
+
+    loop {_censoredWords::*}:
+        if "%{_message}%" contains loop-value:
+            cancel event
+            send "{@prefix} &cBu sunucuda küfür etmek yasaktır!" to player
+
+            loop all players:
+                if loop-player has permission "{@view-permission}":
+                    send "{@prefix} &e%player% &cadlı oyuncu küfür etmeye çalıştı: &7%{_message}%" to loop-player
+
+            if {mute::%player%} is not set:
+                set {mute::%player%} to true
+                set {muteReason::%player%} to "Küfür"
+                set {muteTime::%player%} to {@mute-suresi}
+            else:
+                set {_currentMuteTime} to {muteTime::%player%} parsed as timespan
+                set {_newMuteTime} to {_currentMuteTime} * {@mute-multiplier}
+                set {muteTime::%player%} to {_newMuteTime}
+
+            send "{@prefix} &c%player%, &7kural ihlali yaptığınız için &e%{muteTime::%player%}% &7boyunca susturuldunuz. Sebep: Küfür." to player
+
+            wait {muteTime::%player%}
+            delete {mute::%player%}
+            delete {muteReason::%player%}
+            delete {muteTime::%player%}
+            send "{@prefix} &7Mute süreniz doldu. Artık mesaj gönderebilirsiniz." to player
+            stop
+
+command /otomuteac <player>:
+    permission: {@mute-command-permission}
+    permission message: "{@prefix} &cBu komutu kullanma yetkiniz yok!"
+    trigger:
+        if {mute::%arg-1%} is set:
+            delete {mute::%arg-1%}
+            delete {muteReason::%arg-1%}
+            delete {muteTime::%arg-1%}
+            send "{@prefix} &a%arg-1% adlı oyuncunun mute durumu kaldırıldı." to player
+            send "{@prefix} &7Mute durumunuz bir yetkili tarafından kaldırıldı." to arg-1
+        else:
+            send "{@prefix} &c%arg-1% adlı oyuncunun mute durumu zaten kaldırılmış!" to player
+
+command /küfürhelp:
+    trigger:
+        send "{@prefix} &eKüfür Engel Sistemi Komutları:" to player
+        send "&7- Küfür etmek yasaktır, tespit edildiğinde mute atılırsınız." to player
+        send "&7- Mute süresi her ihlalde katlanır." to player
+        send "&7- Yetkili oyuncular küfür edenleri görebilir." to player
+        send "&7- /muteac <oyuncu> ile mute kaldırabilirsiniz." to player
+        send "&7- Bazı oyunculara (kufur.bypass) izin verilerek mute atılmaz." to player
+        send "&e&lKüfür Sistemi by DevLasTNet V1.0" to player
+
+# Herhangi bir sorun olursa discord üzerinden iletişime geçebilirsiniz
+# discord: tdm.adem
+
